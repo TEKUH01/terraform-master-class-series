@@ -1,28 +1,10 @@
-# Terraform Settings Block
-terraform {
-  required_version = "~> 1.0"
-  required_providers {
-    aws = {
-        source  = "hashicorp/aws"
-        version = "~> 3.0"
-        # Optional but recommended in production
-    }
-  }
-}
-
-# Provider Block
-provider "aws" {
-  profile = "default"
-  region  = "us-west-2"
-}
-
-# Resource Block
-
-resource "aws_instance" "project2ec2" {
-  ami = ""
-  instance_type = "t2.micro"
-
+resource "aws_instance""web" {
+  ami = "ami-008fe2fc65df48dac"
+  instance_type = t2.micro
+  subnet_id = "subnet-0365fe8e84e3658c9"
+  key_name = "k8s"
+  security_groups = "sg-0864362b86628798c"
   tags = {
-    Name = "FirstEC2"
+    name= "anisible"
   }
 }
